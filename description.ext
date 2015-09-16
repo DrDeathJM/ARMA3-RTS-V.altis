@@ -1,0 +1,81 @@
+respawn = 3;
+respawndelay = 3;
+respawnDialog = false;
+author = "Dr Death jm||Zenophon";
+overviewText = "DEV-Update 090515.";
+overviewPicture = "pictures\rtsload.paa";
+onLoadName = "Dr Death jm : Zenophon : Arma3 Edition";
+onLoadMission = "Warfare Unleashed: WarGames";
+loadScreen = "pictures\rtsload.paa";
+saving = 0;
+
+briefing = 1;
+debriefing = 1;
+aiKills = 0;
+disabledAI = 0;
+showUAVFeed = 1;
+showGroupIndicator = 0;
+enableDebugConsole = 1;
+taskManagement_markers3D = 1;
+showHUD = 1;
+
+class Header{
+    gameType = CTI;
+    minPlayers = 1;
+    maxPlayers = 26;
+};
+
+class CfgFunctions {
+        #include "vip_cmn\fn\vip_cmn_fnc.hpp"
+        #include "vip_sms\fn\vip_sms_fnc.hpp"
+};
+
+class TAG {
+    class MyMission {
+        class showOSD { file = "functions\fnc_showOSD.sqf"; };
+   };
+};
+
+class CfgRemoteExecCommands {
+    #include "vip_cmn\fn\vip_cmn_fnc_remoteExec.hpp"
+    #include "vip_sms\fn\vip_sms_fnc_remoteExec.hpp"
+};
+
+#include "vip_cmn\resource\vip_dlg_defaults.hpp"
+#include "vip_sms\resource\vip_sms_dlg.hpp"
+#include "param\description.ext"
+#include "menus\Defines.hpp"
+#include "menus\RscCombo.hpp"
+#include "menus\dlgRscRTSMenus.hpp"
+#include "menus\RscLB_C.hpp"
+#include "menus\dlgRscHelp.hpp"
+#include "menus\dlgRscSquadsMenu.hpp"
+#include "menus\patchname.hpp"
+#include "menus\Sounds_music.hpp"
+#include "R3F_LOG\desc_include.h"
+#include "digitalLoadout\defines.hpp"
+#include "digitalLoadout\dialog.hpp"
+
+class CfgSounds {
+    sounds[] = {NoSound,jump8,death};
+
+    class NoSound {
+        name = "NoSound";
+        sound[] = {"", 0, 1};
+        titles[] = {};
+    };
+
+    class jump8 {
+        name="jump8";
+        sound[]={"sound\EN\holyshite.ogg",2,1,50};
+        titles[]={};
+    };
+	class death
+	{
+		name="death";
+		sound[]={\sound\EN\fucke.ogg,2,1,50};
+		titles[]={};
+        };
+
+    #include "menus\Sounds.hpp"
+};
